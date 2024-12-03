@@ -1,20 +1,30 @@
-const { Llama } = require("llama");
-const shap = require("shap");
+const { pipeline } = require('@xenova/transformers');
+const axios = require('axios');
 
-const model = new Llama({
-  modelPath: "path/to/llama/model",
-  tokenizerPath: "path/to/llama/tokenizer"
-});
-
-const shapExplainer = new shap.Explainer(model);
-
+// Async function to create RAG model
 async function createRAGModel() {
-  const input = "Your input text here";
-  const output = await model.generate(input);
-  const explanation = shapExplainer.explain(input);
-
-  console.log("Model Output:", output);
-  console.log("Model Explanation:", explanation);
+  try {
+    // Initialize transformer pipeline
+    const generator = await pipeline('text-generation', 'Xenova/LaMini-Flan-T5-783M');
+    
+    // Example input
+    const input = 'Explain the concept of Retrieval-Augmented Generation';
+    
+    // Generate response
+    const response = await generator(input, {
+      max_new_tokens: 250,
+      temperature: 0.7,
+      do_sample: true
+    });
+    
+    console.log('Model Output:', response);
+    
+    // Placeholder for future explainability
+    console.log('Note: Explainability features to be implemented');
+  } catch (error) {
+    console.error('Error in RAG model creation:', error);
+  }
 }
 
+// Run the RAG model creation
 createRAGModel();
