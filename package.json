@@ -1,0 +1,17 @@
+{
+  "name": "rag-model-with-shap",
+  "version": "1.0.0",
+  "description": "RAG Model Implementation with Llama and SHAP for Explainable AI",
+  "main": "createRAGModel.js",
+  "scripts": {
+    "start": "node createRAGModel.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server-brave-search": "^1.0.0",
+    "llama": "^0.1.0",
+    "shap": "^0.1.0"
+  },
+  "keywords": ["RAG", "Llama", "SHAP", "Explainable AI"],
+  "author": "",
+  "license": "ISC"
+}
