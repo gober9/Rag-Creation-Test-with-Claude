@@ -1,17 +1,26 @@
 {
-  "name": "rag-model-with-shap",
+  "name": "rag-model-with-explainability",
   "version": "1.0.0",
-  "description": "RAG Model Implementation with Llama and SHAP for Explainable AI",
+  "description": "RAG Model Implementation with Explainable AI",
   "main": "createRAGModel.js",
   "scripts": {
-    "start": "node createRAGModel.js"
+    "start": "node createRAGModel.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@modelcontextprotocol/server-brave-search": "^1.0.0",
-    "llama": "^0.1.0",
-    "shap": "^0.1.0"
+    "@xenova/transformers": "^2.6.0",
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2"
   },
-  "keywords": ["RAG", "Llama", "SHAP", "Explainable AI"],
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "typescript": "^5.3.3"
+  },
+  "keywords": ["RAG", "Machine Learning", "Explainable AI"],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": ">=16.0.0"
+  }
 }
